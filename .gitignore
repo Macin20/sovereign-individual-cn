@@ -8,3 +8,6 @@ temp/
 *.aux
 *.toc
 *.gz
+*.out
+*.fle
+*.fdb_latexmk
