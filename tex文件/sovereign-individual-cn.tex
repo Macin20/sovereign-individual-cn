@@ -1,0 +1,78 @@
+\documentclass[fontset=fandol,11pt,a4paper]{ctexbook}%
+%
+% 注意宏包顺序，有可能会报错
+% 采用LuaLaTeX编译
+\usepackage{ctex}% 中文支持
+
+\usepackage{graphics}% 图形支持
+\usepackage{parallel}% 提供双栏排版支持
+\usepackage[english]{babel}% 载入美式英语断字模板
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+
+\hypersetup{hidelinks}
+\geometry
+{
+  a4paper,%% 设置为A4纸，并设置边距
+  left = 1.5cm,%
+  right = 1.5cm,%
+  top = 2.54cm,%
+  bottom = 2.54cm%
+}%
+
+\setlength{\parindent}{2em}% 缩进为两个字符宽度
+\setmainfont{Book Antiqua}% 设置全局英文字体
+
+
+\setcounter{tocdepth}{1}  %设置目录深度
+\setcounter{secnumdepth}{2} %设置标题深度
+
+
+\ctexset { %定制章节样式
+chapter = {
+beforeskip = 0pt,
+fixskip = true,
+format = \Huge\bfseries,
+nameformat = \rule{\linewidth}{1bp}\par\bigskip\hfill\chapternamebox,
+number = \arabic{chapter},
+aftername = \par\medskip,
+aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
+}
+}
+\newcommand\chapternamebox[1]{%
+\parbox{\ccwd}{\linespread{1}\selectfont\centering #1}}
+
+
+% ------------------ 开始 -------------------
+
+%
+\begin{document}
+
+\title{\Huge{\textbf{主权个人}}\\ \large{掌握信息时代的变革}}
+\author{James Dale Davidson
+	\and Lord William Rees-Mogg}
+\date{1997年初版，2020年再版}
+
+
+% ------------------ 正文 -------------------
+
+\maketitle
+\thispagestyle{empty} 	%%封面页不要编页码
+
+\include{preface} %序言部分 preface.tex
+\pagestyle{empty}
+\include{mycomment} %译者推荐 mycomment.tex
+
+
+\renewcommand\contentsname{目录} %为了让中文显示“目录”
+\tableofcontents %%目录页
+\pagestyle{empty} %%页眉页脚为空
+
+\newpage
+\mainmatter
+\pagestyle{headings} %设置当前及后续页面风格
+\include{chap1}  %导入第1章内容
+\include{chap2}  %导入第2章内容
+
+\end{document}
