@@ -10,4 +10,6 @@ temp/
 *.gz
 *.out
 *.fle
+*.fls
 *.fdb_latexmk
+*.DS_Store

@@ -20,6 +20,11 @@
 \setcounter{tocdepth}{1}  %设置目录深度
 \setcounter{secnumdepth}{2} %设置标题深度
 
+%---------------------用另外一种分栏工具测试下，可以兼容列表和脚注。
+\usepackage{paracol}
+\columnratio{0.35}           % 栏宽比例
+\setlength{\columnsep}{2em}  % 栏间距
+
 \ctexset { %定制章节样式
 chapter = {
 beforeskip = 0pt,
