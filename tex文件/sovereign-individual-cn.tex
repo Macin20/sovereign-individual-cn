@@ -1,31 +1,33 @@
-\documentclass[fontset=none, punct=kaiming]{ctexbook}
+\documentclass[fontset=adobe]{ctexbook}
+
 \usepackage{paracol}
-\columnratio{0.45}           	% 栏宽比例
-\setlength{\columnsep}{2em}  	% 栏间距
-\usepackage{parallel}				%为了兼容后面的章节
-\usepackage{ragged2e}				%为了对齐英文部分，效果不好
-\usepackage{hyperref}
-\hypersetup{hidelinks}
+\columnratio{0.45}           % 栏宽比例
+\setlength{\columnsep}{1em}  % 栏间距
+
 \usepackage{geometry}
 \geometry{hmargin=2.54cm, vmargin=3.18cm}
-
-% 其他样式设置
+\usepackage{hyperref}
+\hypersetup{hidelinks}
 
 \usepackage{indentfirst}
 \usepackage{lipsum}
 \usepackage{zhlipsum}
-\pagestyle{plain}
-\setlength{\parskip}{.5ex plus 1pt}
+\usepackage{fancyhdr} % 页眉页脚
 
 % 中西文均适用思源宋体
-\setCJKmainfont{Source Han Serif SC}
-\setmainfont{Book Antiqua}[CharacterWidth=AlternateProportional]
+%\setCJKmainfont{Source Han Serif SC}
+%\setmainfont{Source Han Serif SC}[CharacterWidth=AlternateProportional]
 
-\setcounter{tocdepth}{1}  %设置目录深度
-\setcounter{secnumdepth}{2} %设置标题深度
+% 其他样式设置
+\setlength{\parskip}{.5ex plus 1pt}
 
+\title{\Huge{\textbf{\emph{the}\\ Sovereign Individual}}\\ \Large{主权个人：掌握信息时代的变革}}
+\author{James Dale Davidson
+	\and Lord William Rees-Mogg}
+\date{1997年初版\\2020年再版}
 
-\ctexset { %定制章节样式
+%%%定制章节样式%%%
+\ctexset { 
 chapter = {
 beforeskip = 0pt,
 fixskip = true,
@@ -38,34 +40,23 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 }
 \newcommand\chapternamebox[1]{%
 \parbox{\ccwd}{\linespread{1}\selectfont\centering #1}}
+%%%%%%%%%%%%%%%%
 
-
-
-% ------------------ 开始 -------------------
 \begin{document}
-\title{\Huge{\textbf{The Sovereign Individual}}\\ \large{主权个人：掌握信息时代的变革}}
-\author{James Dale Davidson
-	\and Lord William Rees-Mogg}
-\date{1997年初版，2020年再版}
 
-
-% ------------------ 正文 -------------------
 \maketitle
-\thispagestyle{empty} 	%%封面页不要编页码
+\thispagestyle{empty}    %不要页码
 
-\include{preface} %序言部分 preface.tex
-\pagestyle{empty}
-\include{mycomment} %译者推荐 mycomment.tex
-
-
-\renewcommand\contentsname{目录} %为了让中文显示“目录”
-\tableofcontents %%目录页
-\pagestyle{empty} %%页眉页脚为空
-
+\tableofcontents
 \newpage
-\mainmatter
-\pagestyle{headings} %设置当前及后续页面风格
-\include{chap1}  %导入第1章内容
-%\include{chap2}  %导入第2章内容
+
+\include{preface.tex}
+\thispagestyle{empty}
+
+\include{mycomment.tex}
+\thispagestyle{empty}
+
+\include{chapter1.tex}
+\pagestyle{fancy}
 
 \end{document}
