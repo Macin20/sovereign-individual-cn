@@ -1,7 +1,7 @@
-\documentclass[fontset=none]{ctexbook}
+\documentclass[]{ctexbook}
 \usepackage{paracol}
-\columnratio{0.65}           % 栏宽比例
-\setlength{\columnsep}{2em}  % 栏间距
+\columnratio{0.66}           % 栏宽比例
+\setlength{\columnsep}{1.2em}  % 栏间距
 
 \usepackage{geometry}
 \geometry{hmargin=2.54cm, vmargin=3.18cm}
@@ -55,15 +55,15 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 \tableofcontents
 \newpage
 
-\include{preface.tex}
+\include{texcode/preface.tex}
 \thispagestyle{empty}
 
-\include{mycomment.tex}
+\include{texcode/mycomment.tex}
 \thispagestyle{empty}
 
 
 
-\include{chapter1.tex}
+\include{texcode/chapter1.tex}
 \pagestyle{fancy}
 %\include{chapter2.tex}
 %\include{chapter3.tex}
