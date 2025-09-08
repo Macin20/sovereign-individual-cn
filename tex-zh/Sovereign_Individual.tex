@@ -1,4 +1,8 @@
 \documentclass[]{ctexbook}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{1} % 目录层级，设置目录显示深度为3，即显示到subsubsection
+
 \usepackage{paracol}
 \columnratio{0.66}           % 栏宽比例
 \setlength{\columnsep}{1.2em}  % 栏间距
@@ -71,8 +75,8 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 \pagestyle{fancy}
 \include{texcode/chapter4.tex}
 \pagestyle{fancy}
-%\include{texcode/chapter5.tex}
-%\pagestyle{fancy}
+\include{texcode/chapter5.tex}
+\pagestyle{fancy}
 %\include{texcode/chapter6.tex}
 %\pagestyle{fancy}
 %\include{texcode/chapter7.tex}
