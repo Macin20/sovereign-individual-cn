@@ -1,0 +1,87 @@
+\documentclass[]{ctexbook}
+\usepackage{paracol}
+\columnratio{0.66}           % 栏宽比例
+\setlength{\columnsep}{1.2em}  % 栏间距
+
+\usepackage{geometry}
+\geometry{hmargin=2.54cm, vmargin=3.18cm}
+
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\usepackage{indentfirst}
+\usepackage{lipsum}
+\usepackage{zhlipsum}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable, theorems}
+\usepackage{fancyhdr} % 页眉页脚
+
+% 中西文均适用思源宋体
+\setCJKmainfont{Source Han Serif SC}
+\setmainfont{Source Han Serif SC}[CharacterWidth=AlternateProportional]
+
+% 其他样式设置
+\pagestyle{plain}
+\setlength{\parskip}{.5ex plus 1pt}
+
+
+\ctexset { %定制章节样式
+chapter = {
+beforeskip = 0pt,
+fixskip = true,
+format = \Huge\bfseries,
+nameformat = \rule{\linewidth}{1bp}\par\bigskip\hfill\chapternamebox,
+number = \arabic{chapter},
+aftername = \par\medskip,
+aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par 
+}
+}
+\newcommand\chapternamebox[1]{%
+\parbox{\ccwd}{\linespread{1}\selectfont\centering #1}}
+
+
+
+\title{\Huge{\textbf{the Sovereign Individual}}\\ \Large{主权个人：掌握信息时代的变革}}
+\author{James Dale Davidson
+	\and Lord William Rees-Mogg}
+\date{1997年初版\\2020年再版}
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}    %不要页码
+
+\tableofcontents
+\newpage
+
+%\include{texcode/preface.tex}
+%\thispagestyle{empty}
+
+%\include{texcode/mycomment.tex}
+%\thispagestyle{empty}
+
+
+
+\include{texcode/chapter1.tex}
+\pagestyle{fancy}
+%\include{texcode/chapter2.tex}
+%\pagestyle{fancy}
+%\include{texcode/chapter3.tex}
+%\pagestyle{fancy}
+%\include{texcode/chapter4.tex}
+%\pagestyle{fancy}
+%\include{texcode/chapter5.tex}
+%\pagestyle{fancy}
+%\include{texcode/chapter6.tex}
+%\pagestyle{fancy}
+%\include{texcode/chapter7.tex}
+%\pagestyle{fancy}
+%\include{texcode/chapter8.tex}
+%\pagestyle{fancy}
+
+
+%\include{chapter3.tex}
+
+
+\end{document}
