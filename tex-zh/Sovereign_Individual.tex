@@ -46,58 +46,32 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 
 
 
-\title{\Huge{\textbf{the Sovereign Individual}}\\ \Large{主权个人：掌握信息时代的变革}}
+\title{\Huge{\textbf{the Sovereign Individual}} \\ \bigskip \Large{主权个人：掌握信息时代的变革}}
 \author{James Dale Davidson
 	\and Lord William Rees-Mogg}
 \date{1997年初版\\2020年再版}
 
 
 \begin{document}
+	\frontmatter
+	\maketitle
+	\thispagestyle{empty}    %不要页码
+	\include{texcode/preface.tex}
+	\include{texcode/preface2.tex}
+	
+	\tableofcontents
 
-\maketitle
-\thispagestyle{empty}    %不要页码
-
-\tableofcontents
-\newpage
-
-%\include{texcode/preface.tex}
-%\thispagestyle{empty}
-
-%\include{texcode/mycomment.tex}
-%\thispagestyle{empty}
-
-
-\include{texcode/chapter1.tex}
-\pagestyle{fancy}
-
-\include{texcode/chapter2.tex}
-\pagestyle{fancy}
-
-\include{texcode/chapter3.tex}
-\pagestyle{fancy}
-
-\include{texcode/chapter4.tex}
-\pagestyle{fancy}
-
-\include{texcode/chapter5.tex}
-\pagestyle{fancy}
-
-\include{texcode/chapter6.tex}
-\pagestyle{fancy}
-
-\include{texcode/chapter7.tex}
-\pagestyle{fancy}
-
-\include{texcode/chapter8.tex}
-\pagestyle{fancy}
-
-\include{texcode/chapter9.tex}
-\pagestyle{fancy}
-
-\include{texcode/chapter10.tex}
-\pagestyle{fancy}
-
-\include{texcode/chapter11.tex}
-\pagestyle{fancy}
-
+	\mainmatter
+	\pagestyle{fancy}
+	\include{texcode/chapter1.tex}
+	\include{texcode/chapter2.tex}
+	\include{texcode/chapter3.tex}
+	\include{texcode/chapter4.tex}
+	\include{texcode/chapter5.tex}
+	\include{texcode/chapter6.tex}
+	\include{texcode/chapter7.tex}
+	\include{texcode/chapter8.tex}
+	\include{texcode/chapter9.tex}
+	\include{texcode/chapter10.tex}
+	\include{texcode/chapter11.tex}
 \end{document}
