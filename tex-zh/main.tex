@@ -1,0 +1,201 @@
+\documentclass[]{ctexbook}
+\usepackage[dvipsnames,svgnames,x11names,table]{xcolor}
+\usepackage{cncolours}
+\usepackage{pgfornament-han}
+\usepackage{tikz}
+\usetikzlibrary{calc,shadows,hobby,intersections, decorations.markings, decorations.pathreplacing,spy,arrows,shapes,fadings,trees,mindmap,patterns,shapes.arrows,shapes.symbols,tikzmark,shapes.geometric,graphs, quotes, angles,decorations.pathmorphing,through,shadings,backgrounds,positioning,fit,arrows.meta,shapes.misc,decorations.shapes}
+\RequirePackage{pgfplots} %画图 %%页面样式设计核心包 %提供\pgfonlayer命令以及下列图层指令
+\pgfplotsset{compat=1.18}
+\usepackage{stys/Titlepage}
+\usepackage{stys/bottompage}
+\usepackage{amssymb,amsfonts}
+\usepackage{makeidx}
+\usepackage{etoolbox} % 判断函数
+%\usepackage{paracol}
+\usepackage{etoc}
+\usepackage{calc}
+\usepackage{xkeyval,ifthen}
+\usepackage{varwidth}
+\usepackage[hidelinks]{hyperref}
+
+\setcounter{tocdepth}{1}%控制目录深度
+\setcounter{secnumdepth}{3}%增加编号深度
+\usepackage{dashrule}
+\newlength\outermarginwidth
+\setlength\outermarginwidth{2cm}
+\newlength\covershift
+\setlength\covershift{5cm}
+\makeatletter
+%%----------------------------------封面信息定义--------------------------------------------------------%%
+\newcommand*\bookseries[1]{\def\@bookseries{#1}}
+\newcommand*\subtitle[1]{\def\@subtitle{#1}}
+\newcommand*\edition[1]{\def\@edition{#1}}
+\newcommand*\presslogo[1]{\def\@presslogo{#1}}
+\newcommand*\pressname[1]{\def\@pressname{#1}}
+\newcommand*\coverimage[1]{\def\@coverimage{#1}}
+%%----------------------------------封面信息定义--------------------------------------------------------%%
+\makeatother
+\usepackage{indentfirst}
+\definecolor{nuanbai}{HTML}{f8f8f8} % F5F5F5
+\pagecolor{nuanbai!50}
+\usepackage{amsmath}
+\usepackage{zhlipsum}
+\setCJKmainfont{Source Han Serif SC}
+\setmainfont{Source Han Serif SC}[CharacterWidth=AlternateProportional]
+
+
+\usepackage[left=2cm,right=2cm,top=.8cm,bottom=3.6cm]{geometry}
+\usepackage[automark]{scrlayer-scrpage}%页面设置宏包,隶属于koma-script文档类
+\usepackage{fontawesome5}
+\usepackage{mathrsfs} %用于解决页眉靠上的问题
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{breakable, skins,theorems}%TcolorBox Library
+%\usepackage{tabularx}
+\usepackage{lastpage}
+\usepackage{ninecolors}
+\usepackage{tabularray}
+\usepackage{pgfornament}
+\usepackage{zhnumber}
+\usepackage{dashrule}
+\usepackage{ulem} %用于文字下划线格式。与textbf冲突。
+\RequirePackage{pgfplots} %画图 %%页面样式设计核心包 %提供\pgfonlayer命令以及下列图层指令
+\pgfplotsset{compat=1.18}
+\usepackage{graphicx}%修正minipage顶部对齐问题
+
+\pgfdeclarelayer{background} %背景%底层
+\pgfdeclarelayer{foreground} %上层
+\pgfdeclarelayer{top} %顶部
+\pgfdeclarelayer{bottom} %底部
+\pgfsetlayers{bottom,background,main,foreground,top}
+%%%%===============================================================%%%%%
+
+\definecolor{qing}{HTML}{a88462}
+\definecolor{xieqing}{HTML}{88ada6}
+\definecolor{hex}{RGB}{217,230,232}  %grey
+\definecolor{hui}{HTML}{fffbf0}
+
+\newcommand{\triangler}[2][teal]{
+\begin{tikzpicture}[remember picture]
+\def\x{#2}
+\filldraw[#1] (-\x,\x) -- (0,0) --(-\x,-\x)--cycle;
+\filldraw[#1] (0,\x) -- (\x,0) -- (0,-\x)--cycle;
+\filldraw[#1] (\x,\x) -- (2*\x,0) -- (\x,-\x)--cycle;
+\end{tikzpicture}
+}
+\newcommand{\trianglel}[2][teal]{
+\begin{tikzpicture}[remember picture]
+\def\x{#2}
+\filldraw[#1] (\x,\x) -- (0,0) --(\x,-\x)--cycle;
+\filldraw[#1] (0,\x) -- (-\x,0) -- (0,-\x)--cycle;
+\filldraw[#1] (-\x,\x) -- (-2*\x,0) -- (-\x,-\x)--cycle;
+\end{tikzpicture}
+}
+\usepackage{lastpage}
+% 重置\rightmark与\leftmark名称
+
+
+\setlength{\headheight}{50pt} %用于解决页眉靠上的问题
+\chead{\headstyle}
+
+
+\colorlet{CyaN}{yellow!40!cyan}
+\colorlet{OrangE}{yellow!20!orange}
+\colorlet{BluE}{cyan!70!blue}
+\colorlet{ReD}{red!20!orange}
+\colorlet{GreeN}{yellow!50!green}
+\tcolorboxenvironment{thm}{enhanced jigsaw, breakable, enlarge left by=-3.5mm, width=\textwidth+3.5mm, colback=CyaN!10, boxrule=0pt, top=2pt, bottom=2pt, left=2.5mm, borderline west={1.5mm}{0mm}{CyaN}, frame hidden}
+\tcolorboxenvironment{defi}{enhanced jigsaw, breakable, enlarge left by=-3.5mm, width=\textwidth+3.5mm, colback=ReD!5, boxrule=0pt, top=2pt, bottom=2pt, left=2.5mm, borderline west={1.5mm}{0mm}{ReD}, frame hidden}
+\tcolorboxenvironment{lem}{enhanced jigsaw, breakable, enlarge left by=-3.5mm, width=\textwidth+3.5mm, colback=BluE!5, boxrule=0pt, top=2pt, bottom=2pt, left=2.5mm, borderline west={1.5mm}{0mm}{BluE}, frame hidden}
+\tcolorboxenvironment{prop}{enhanced jigsaw, breakable, enlarge left by=-3.5mm, width=\textwidth+3.5mm, colback=OrangE!5, boxrule=0pt, top=2pt, bottom=2pt, left=2.5mm, borderline west={1.5mm}{0mm}{OrangE}, frame hidden}
+\tcolorboxenvironment{exam}{enhanced jigsaw, breakable, enlarge left by=-3.5mm, width=\textwidth+3.5mm, colback=GreeN!5, boxrule=0pt, top=2pt, bottom=2pt, left=2.5mm, borderline west={1.5mm}{0mm}{GreeN}, frame hidden}
+\tcolorboxenvironment{cor}{enhanced jigsaw, breakable, enlarge left by=-3.5mm, width=\textwidth+3.5mm, colback=violet!5, boxrule=0pt, top=2pt, bottom=2pt, left=2.5mm, borderline west={1.5mm}{0mm}{violet}, frame hidden}
+\newcommand*{\circled}[1]{\lower.7ex\hbox{\tikz\draw (0pt, 0pt)%
+    circle (.5em) node {\makebox[1em][c]{\small #1}};}}
+\newcommand{\exercise}[2][\bcicosaedre]{\bigskip
+\begin{tikzpicture}[remember picture,overlay]
+\draw[line width=2pt,loosely dotted,teal] (0,0)--node[pos=0.4,rectangle,minimum height=1.5em,font=\sffamily\Large,text=black,fill=black!2,drop shadow={opacity=.3, shadow xshift=0.1cm},anchor=center,
+	inner sep=1.5mm,
+	anchor=west,] {$#1$  ~ #2} (\linewidth,0);
+\end{tikzpicture}\bigskip\smallskip
+}
+
+% 其他样式设置
+\pagestyle{plain}
+\setlength{\parskip}{.5ex plus 1pt}
+
+%定制章节样式，定制章节样式，定制章节样式
+\ctexset { 
+chapter = {
+beforeskip = 0pt,
+fixskip = true,
+format = \Huge\bfseries,
+nameformat = \rule{\linewidth}{1bp}\par\bigskip\hfill\chapternamebox,
+number = \arabic{chapter},
+aftername = \par\medskip,
+aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par 
+}
+}
+\newcommand\chapternamebox[1]{%
+\parbox{\ccwd}{\linespread{1}\selectfont\centering #1}}
+%定制章节样式，定制章节样式，定制章节样式
+
+
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=nty
+]{biblatex}
+\addbibresource{ref.bib}
+\makeindex
+
+
+\begin{document}
+%%% 封面部分 %%%
+\thispagestyle{empty}
+\title{主权个人}
+\subtitle{the Sovereign Individual}
+\edition{\fontsize{15}{15}\selectfont 1997年初版 \hspace{1em} 2020年再版}
+\bookseries{}
+\author{}
+\pressname{Springer} %出版社名称
+\presslogo{figures/Springer-logo.png} %出版社徽标
+\makecover
+
+%%% 版权页 目录 %%%
+\input{maincontents/titlepage}
+\frontmatter
+\pagenumbering{Roman}
+\input{maincontents/preface}
+\input{maincontents/preface2}
+\thispagestyle{empty}
+%\definecolor{maincolor}{HTML}{8B8989}
+\tableofcontents\let\cleardoublepage\clearpage
+
+%%% 正文部分 %%%
+\mainmatter
+\pagenumbering{arabic}
+\input{maincontents/chapter1}
+\input{maincontents/chapter2}
+\input{maincontents/chapter3}
+\input{maincontents/chapter4}
+\input{maincontents/chapter5}
+\input{maincontents/chapter6}
+\input{maincontents/chapter7}
+\input{maincontents/chapter8}
+\input{maincontents/chapter9}
+\input{maincontents/chapter10}
+\input{maincontents/chapter11}
+
+\normalem
+\printbibliography[
+heading=bibintoc,
+title={参考文献}
+]
+\printindex
+
+%%% 封底 %%%
+\summary{}
+\makebottomcover
+
+\end{document}
