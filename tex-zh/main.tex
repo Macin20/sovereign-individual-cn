@@ -44,7 +44,7 @@
 \setmainfont{Source Han Serif SC}[CharacterWidth=AlternateProportional]
 
 
-\usepackage[left=2cm,right=2cm,top=.8cm,bottom=3.6cm]{geometry}
+\usepackage[left=2cm,right=2cm,top=1.8cm,bottom=1.6cm]{geometry}
 \usepackage[automark]{scrlayer-scrpage}%页面设置宏包,隶属于koma-script文档类
 \usepackage{fontawesome5}
 \usepackage{mathrsfs} %用于解决页眉靠上的问题
@@ -141,15 +141,6 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 %定制章节样式，定制章节样式，定制章节样式
 
 
-\usepackage[
-backend=biber,
-style=numeric,
-sorting=nty
-]{biblatex}
-\addbibresource{ref.bib}
-\makeindex
-
-
 \begin{document}
 %%% 封面部分 %%%
 \thispagestyle{empty}
@@ -187,13 +178,8 @@ sorting=nty
 \input{maincontents/chapter10}
 \input{maincontents/chapter11}
 \input{maincontents/afterword}
-
-\normalem
-\printbibliography[
-heading=bibintoc,
-title={参考文献}
-]
-\printindex
+\input{maincontents/appendix}
+\input{maincontents/appendix2}
 
 %%% 封底 %%%
 \summary{}
