@@ -11,7 +11,6 @@
 \usepackage{amssymb,amsfonts}
 \usepackage{makeidx}
 \usepackage{etoolbox} % 判断函数
-%\usepackage{paracol}
 \usepackage{etoc}
 \usepackage{calc}
 \usepackage{xkeyval,ifthen}
@@ -44,10 +43,9 @@
 \setmainfont{Source Han Serif SC}[CharacterWidth=AlternateProportional]
 
 
-\usepackage[left=2cm,right=2cm,top=1.8cm,bottom=1.6cm]{geometry}
-\usepackage[automark]{scrlayer-scrpage}%页面设置宏包,隶属于koma-script文档类
-\usepackage{fontawesome5}
-\usepackage{mathrsfs} %用于解决页眉靠上的问题
+\usepackage[top=2cm,bottom=2cm]{geometry}
+\geometry{a4paper,scale=0.8}
+
 
 \usepackage[most]{tcolorbox}
 \tcbuselibrary{breakable, skins,theorems}%TcolorBox Library
@@ -94,9 +92,6 @@
 \usepackage{lastpage}
 % 重置\rightmark与\leftmark名称
 
-
-\setlength{\headheight}{50pt} %用于解决页眉靠上的问题
-\chead{\headstyle}
 
 
 \colorlet{CyaN}{yellow!40!cyan}
@@ -162,6 +157,9 @@ aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
 \thispagestyle{empty}
 %\definecolor{maincolor}{HTML}{8B8989}
 \tableofcontents\let\cleardoublepage\clearpage
+
+\newpage
+\thispagestyle{empty}
 
 %%% 正文部分 %%%
 \mainmatter
