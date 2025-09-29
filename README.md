@@ -21,6 +21,10 @@
 4. `tex-zh` 文件夹中为中文版，未删减，可下载pdf后直接用A4纸打印。
 5. 欢迎Star本仓库，谢谢。
 
+## 下载地址
+[主权个人_中文版_Sovereign_Individual_V2.pdf](https://github.com/Macin20/sovereign-individual-cn/releases/download/2.0/Sovereign_Individual_V2.pdf)
+
+
 ## 书稿截图
 
 ![](https://macinorg-blog.oss-cn-chengdu.aliyuncs.com/blog/Screenshot2025-09-28at02.29.21.webp)
